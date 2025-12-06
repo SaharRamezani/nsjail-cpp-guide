@@ -6,12 +6,14 @@ TARGET = test_program
 SOURCE = examples/test_program.cpp
 EXAMPLE_TARGET = example_algo
 EXAMPLE_SOURCE = examples/example_algo.cpp
+FAILING_TARGET = failing_test
+FAILING_SOURCE = examples/failing_test.cpp
 
 .PHONY: all clean run run-simple run-advanced test examples
 
 all: $(TARGET)
 
-examples: $(TARGET) $(EXAMPLE_TARGET)
+examples: $(TARGET) $(EXAMPLE_TARGET) $(FAILING_TARGET)
 
 $(TARGET): $(SOURCE)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SOURCE)
@@ -19,8 +21,11 @@ $(TARGET): $(SOURCE)
 $(EXAMPLE_TARGET): $(EXAMPLE_SOURCE)
 	$(CXX) $(CXXFLAGS) -o $(EXAMPLE_TARGET) $(EXAMPLE_SOURCE)
 
+$(FAILING_TARGET): $(FAILING_SOURCE)
+	$(CXX) $(CXXFLAGS) -o $(FAILING_TARGET) $(FAILING_SOURCE)
+
 clean:
-	rm -f $(TARGET) $(EXAMPLE_TARGET)
+	rm -f $(TARGET) $(EXAMPLE_TARGET) $(FAILING_TARGET)
 
 run: $(TARGET)
 	./scripts/run_sandbox.sh
