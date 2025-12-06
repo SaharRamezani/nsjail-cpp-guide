@@ -26,8 +26,9 @@ else
 fi
 
 # Default configuration
-CONFIG_FILE="${SCRIPT_DIR}/simple-sandbox.cfg"
-PROGRAM="${SCRIPT_DIR}/test_program"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+CONFIG_FILE="${PROJECT_ROOT}/config/simple-sandbox.cfg"
+PROGRAM="${PROJECT_ROOT}/test_program"
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
