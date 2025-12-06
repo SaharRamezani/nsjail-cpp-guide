@@ -28,7 +28,7 @@ cd nsjail
 make
 
 # Optionally install system-wide
-sudo cp nsjail /usr/local/bin/
+sudo cp nsjail/nsjail /usr/local/bin/
 ```
 
 ### Method 2: Docker
