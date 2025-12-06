@@ -127,14 +127,6 @@ Perfect for:
 - **Education** - Learn about sandboxing
 - **Development** - Test in isolated environments
 
-## Contributing
-
-Contributions welcome! Feel free to:
-- Report issues
-- Submit pull requests
-- Suggest improvements
-- Share your use cases
-
 ## Credits
 
 - **NsJail** by Google - https://github.com/google/nsjail
