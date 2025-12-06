@@ -28,7 +28,7 @@ cd nsjail
 make
 
 # Optionally install system-wide
-sudo cp nsjail/nsjail /usr/local/bin/
+sudo cp nsjail /usr/local/bin/
 ```
 
 ### Method 2: Docker
@@ -47,7 +47,7 @@ cd nsjail-cpp-guide
 2. **Install NsJail** (see Prerequisites above)
 
 3. **Update script to point to your NsJail binary**:
-If you installed NsJail to a custom location, edit `run_sandbox.sh` and set:
+If you installed NsJail to a custom location, edit `scripts/run_sandbox.sh` and set:
 ```bash
 NSJAIL_BIN="/path/to/your/nsjail"
 ```
@@ -55,7 +55,7 @@ NSJAIL_BIN="/path/to/your/nsjail"
 4. **Test the setup**:
 ```bash
 make
-./run_sandbox.sh
+make run
 ```
 
 ## What You Get
@@ -68,9 +68,9 @@ make
 
 ## Documentation
 
-- [QUICKSTART.md](QUICKSTART.md) - Quick reference guide
-- [SETUP_COMPLETE.md](SETUP_COMPLETE.md) - Detailed examples and use cases
-- [README_DETAILED.md](README_DETAILED.md) - Advanced configuration
+- [QUICKSTART.md](docs/QUICKSTART.md) - Quick reference guide
+- [SETUP_COMPLETE.md](docs/SETUP_COMPLETE.md) - Detailed examples and use cases
+- [README_DETAILED.md](docs/README_DETAILED.md) - Advanced configuration and troubleshooting
 
 ## Usage Examples
 
@@ -80,33 +80,34 @@ make
 g++ -o solution solution.cpp -std=c++11
 
 # Run in sandbox
-./run_sandbox.sh -p ./solution
+./scripts/run_sandbox.sh -p ./solution
 ```
 
 ### Batch Testing
 ```bash
 # Test against multiple inputs
-./batch_test.sh ./solution ./test_cases
+./scripts/batch_test.sh ./solution ./test_cases
 ```
 
 ### Custom Configuration
 ```bash
 # Use advanced config with stricter limits
-./run_sandbox.sh -c sandbox.cfg -p ./solution
+./scripts/run_sandbox.sh -c config/sandbox.cfg -p ./solution
 ```
 
 ## Files Included
 
-| File | Description |
+| Directory/File | Description |
 |------|-------------|
-| `run_sandbox.sh` | Main wrapper script for running programs |
-| `batch_test.sh` | Batch testing utility |
-| `simple-sandbox.cfg` | Basic sandbox configuration |
-| `sandbox.cfg` | Advanced configuration with stricter limits |
+| `scripts/` | Helper scripts for running programs |
+| `scripts/run_sandbox.sh` | Main wrapper script for running programs |
+| `scripts/batch_test.sh` | Batch testing utility |
+| `config/` | Sandbox configuration files |
+| `config/simple-sandbox.cfg` | Basic sandbox configuration |
+| `config/sandbox.cfg` | Advanced configuration with stricter limits |
+| `examples/` | Example C++ programs |
+| `docs/` | Complete guides and references |
 | `Makefile` | Build automation |
-| `test_program.cpp` | Sample test program |
-| `example_algo.cpp` | Algorithm example (Kadane's algorithm) |
-| Documentation | Complete guides and references |
 
 ## Security Features
 

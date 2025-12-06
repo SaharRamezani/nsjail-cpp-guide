@@ -1,18 +1,4 @@
-# 🎉 NsJail Setup Complete!
-
-Your NsJail sandbox environment is fully configured and tested.
-
-## ✅ What's Working
-
-All systems tested and operational:
-
-1. ✅ **NsJail compiled** - Located at `nsjail/nsjail`
-2. ✅ **Test program works** - `test_program` runs in sandbox
-3. ✅ **Example algorithm works** - `example_algo` demonstrates isolated execution
-4. ✅ **Wrapper script works** - `run_sandbox.sh` with relative/absolute paths
-5. ✅ **Configurations work** - Both simple and advanced configs tested
-
-## 🚀 Quick Start
+# 🚀 Quick Start
 
 ```bash
 # Run the test program
@@ -22,58 +8,9 @@ All systems tested and operational:
 make run
 ```
 
-## 📊 Test Results
+# 🎯 Next Steps
 
-### Test Program Output
-```
-=== NsJail Test Program ===
-Hello from inside the sandbox!
-
-Process Information:
-  PID: 1              # ← Isolated PID namespace
-  UID: 99999          # ← Not running as your user
-  GID: 99999          # ← Separate group
-
-Filesystem Test:
-  Hostname: sahar-Sword-15-A11UD
-
-Computation Test:
-  Sum of 1-100: 5050
-
-=== Program Completed Successfully ===
-```
-
-### Example Algorithm Output
-```
-Maximum Subarray Sum Example
-============================
-Array: -2 1 -3 4 -1 2 1 -5 4 
-Maximum subarray sum: 6
-(Subarray: [4, -1, 2, 1])
-```
-
-## 📁 Your Files
-
-```
-NsJail/
-├── nsjail/               # NsJail source and binary
-│   └── nsjail           # ← The main executable
-├── test_program.cpp      # Sample C++ program
-├── test_program         # Compiled test program
-├── example_algo.cpp     # Algorithm example
-├── example_algo         # Compiled example
-├── simple-sandbox.cfg   # Basic config (recommended)
-├── sandbox.cfg          # Advanced config
-├── run_sandbox.sh       # Convenience script ⭐
-├── Makefile             # Build automation
-├── README.md            # Full documentation
-├── QUICKSTART.md        # Quick reference
-└── SETUP_COMPLETE.md    # This file
-```
-
-## 🎯 Next Steps
-
-### 1. Run Your Own Programs
+## 1. Run Your Own Programs
 
 ```bash
 # Create your program
@@ -92,7 +29,7 @@ g++ -o myprogram myprogram.cpp -std=c++11
 ./run_sandbox.sh -p ./myprogram
 ```
 
-### 2. Try Different Configurations
+## 2. Try Different Configurations
 
 ```bash
 # Basic isolation (default)
@@ -102,7 +39,7 @@ g++ -o myprogram myprogram.cpp -std=c++11
 ./run_sandbox.sh -c sandbox.cfg -p ./myprogram
 ```
 
-### 3. Test Resource Limits
+## 3. Test Resource Limits
 
 The sandbox automatically enforces:
 - **Memory limit**: 256 MB
@@ -121,7 +58,7 @@ int main() {
 }
 ```
 
-### 4. Test Filesystem Isolation
+## 4. Test Filesystem Isolation
 
 ```cpp
 #include <fstream>
@@ -137,9 +74,9 @@ int main() {
 }
 ```
 
-## 💡 Pro Tips
+# 💡 Pro Tips
 
-### Use Make for Quick Workflow
+## Use Make for Quick Workflow
 ```bash
 make          # Compile test_program
 make run      # Compile and run in sandbox
@@ -147,18 +84,18 @@ make clean    # Remove binaries
 make help     # See all options
 ```
 
-### Direct NsJail Usage
+## Direct NsJail Usage
 ```bash
 # If you prefer direct control
 ./nsjail/nsjail -Mo --chroot / --user 99999 --group 99999 -- ./test_program
 ```
 
-### Interactive Shell in Sandbox
+## Interactive Shell in Sandbox
 ```bash
 ./nsjail/nsjail -Mo --chroot / --user 99999 --group 99999 -- /bin/bash
 ```
 
-### Run Multiple Test Cases
+## Run Multiple Test Cases
 ```bash
 for i in {1..5}; do
     echo "=== Test $i ==="
@@ -166,7 +103,7 @@ for i in {1..5}; do
 done
 ```
 
-## 🔒 Security Features Active
+# 🔒 Security Features Active
 
 Your sandbox provides:
 
@@ -177,16 +114,16 @@ Your sandbox provides:
 - ✅ **Resource limits** - CPU, memory, and time constraints
 - ✅ **Mount namespace** - Separate filesystem view
 
-## 📖 Documentation
+# 📖 Documentation
 
 - **Quick Start**: Read `QUICKSTART.md` for common scenarios
 - **Full Docs**: Check `README.md` for advanced features
 - **Config Files**: See `*.cfg` files for configuration examples
 - **NsJail Docs**: Original documentation in `nsjail/` directory
 
-## 🐛 Troubleshooting
+# 🐛 Troubleshooting
 
-### If Something Doesn't Work
+## If Something Doesn't Work
 
 1. **Check executable permissions**:
    ```bash
@@ -209,9 +146,9 @@ Your sandbox provides:
    ./nsjail/nsjail -v --config simple-sandbox.cfg -- ./test_program
    ```
 
-## 🎓 Learning Resources
+# 🎓 Learning Resources
 
-### Understanding What's Happening
+## Understanding What's Happening
 
 When you run `./run_sandbox.sh`:
 
@@ -225,30 +162,9 @@ When you run `./run_sandbox.sh`:
 8. Enforces resource limits
 9. Reports exit code and cleanup
 
-### Key Concepts
+## Key Concepts
 
 - **Namespaces**: Linux kernel feature for isolation
 - **cgroups**: Resource limiting
 - **chroot**: Filesystem isolation
 - **seccomp**: System call filtering (optional)
-
-## 🚀 Use Cases
-
-This setup is perfect for:
-
-- **Competitive Programming**: Test solutions safely
-- **Code Testing**: Run untrusted code
-- **Security Research**: Analyze suspicious programs
-- **Education**: Learn about sandboxing
-- **Development**: Test in isolated environments
-
-## ✨ You're Ready!
-
-Your NsJail sandbox is production-ready. Start testing your C++ programs in a secure, isolated environment!
-
-```bash
-# Run your first sandboxed program
-./run_sandbox.sh
-```
-
-Happy coding! 🎉
