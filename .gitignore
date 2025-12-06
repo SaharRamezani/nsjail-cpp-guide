@@ -1,6 +1,8 @@
 # Exclude compiled binaries
 test_program
 example_algo
+failing_test
+solution
 *.o
 *.out
 *.exe
