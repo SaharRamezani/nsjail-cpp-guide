@@ -1,0 +1,21 @@
+# Exclude compiled binaries
+test_program
+example_algo
+*.o
+*.out
+*.exe
+a.out
+
+# Exclude temporary files
+*.tmp
+*.swp
+*~
+
+# Exclude OS files
+.DS_Store
+Thumbs.db
+
+# Exclude IDE files
+.vscode/
+.idea/
+*.code-workspace
