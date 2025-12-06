@@ -1,6 +1,6 @@
 # NsJail C++ Sandbox Guide
 
-A complete guide and toolkit for setting up and using NsJail to run C++ programs in isolated containers (see (nsjail.dev){nsjail.dev}).
+A complete guide and toolkit for setting up and using NsJail to run C++ programs in isolated containers (see {nsjail.dev}(nsjail.dev)).
 
 ## What This Is
 
